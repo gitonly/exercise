@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+		<include file="struts-user.xml"/>
+		<package name="dangDefault" extends="struts-default">
+			<interceptors>
+				<interceptor name="transaction" class="struts.interceptor.TransactionInterceptor"/>
+				<interceptor-stack name="transactionStack">
+					<interceptor-ref name="transaction"/>
+					<interceptor-ref name="defaultStack"/>
+				</interceptor-stack>
+			</interceptors>
+		</package>
+</struts>
+
+
