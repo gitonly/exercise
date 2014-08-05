@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	<package name="user" namespace="/user" extends="dangDefault">
+		<action name="regist" class="struts.action.RegistAction">
+			<interceptor-ref name="transactionStack"/>
+			<result name="success">/user/verify_form.jsp</result>
+		</action>
+	</package>
+</struts>
