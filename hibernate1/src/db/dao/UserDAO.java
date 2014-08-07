@@ -11,10 +11,10 @@ public class UserDAO extends BaseDAO{
 	
 	public void add(User user){
 		Configuration conf = new Configuration();
-		conf.configure();//¼ÓÔØÅäÖÃÎÄ¼ş,Ä¬ÈÏsrcÏÂµÄhibernate.cfg.xml
-		SessionFactory sf = conf.buildSessionFactory();//»ñÈ¡SessionFactoryÊµÀı
+		conf.configure();//åŠ è½½é…ç½®æ–‡ä»¶,é»˜è®¤srcä¸‹çš„hibernate.cfg.xml
+		SessionFactory sf = conf.buildSessionFactory();//è·å–SessionFactoryå®ä¾‹
 		Session session = sf.openSession();
-		Transaction txt = session.beginTransaction();//Ä¬ÈÏ²»×Ô¶¯Ìá½»,»ñÈ¡ÊÂÎñ
+		Transaction txt = session.beginTransaction();//é»˜è®¤ä¸è‡ªåŠ¨æäº¤,è·å–äº‹åŠ¡
 		session.save(user);
 		txt.commit();
 		session.close();
@@ -26,12 +26,12 @@ public class UserDAO extends BaseDAO{
 		this.closeSession();
 	}
 	
-	public User findById(int id){//·ÇÖ÷¼ü²éÑ¯ÓÃhqlÓï¾ä£¬ÒÔºó½²
+	public User findById(int id){//éä¸»é”®æŸ¥è¯¢ç”¨hqlè¯­å¥ï¼Œä»¥åè®²
 		Configuration conf = new Configuration();
 		conf.configure();
 		SessionFactory sf = conf.buildSessionFactory();
 		Session session = sf.openSession();
-		User user = (User)session.get(User.class, id);//User.classÓÃÀ´¼ÓÔØÀà¡£
+		User user = (User)session.get(User.class, id);//User.classç”¨æ¥åŠ è½½ç±»ã€‚
 		session.close();
 		return user;
 		
@@ -39,8 +39,8 @@ public class UserDAO extends BaseDAO{
 	
 	public User findById2(int id){
 		Session session = this.openSession();
-		//getÁ¢¿Ì¼ÓÔØÊı¾İ;
-		//loadÊÇÑÓ³Ù¼ÓÔØ,ÔÚµ÷ÓÃÊôĞÔget·½·¨Ê±²Å¼ÓÔØÊı¾İ
+		//getç«‹åˆ»åŠ è½½æ•°æ®;
+		//loadæ˜¯å»¶è¿ŸåŠ è½½,åœ¨è°ƒç”¨å±æ€§getæ–¹æ³•æ—¶æ‰åŠ è½½æ•°æ®
 		User user = (User)session.get(User.class, id);
 		this.closeSession();
 		return user;
@@ -57,7 +57,7 @@ public class UserDAO extends BaseDAO{
 	}
 	
 	public void delete(int id){
-//		User user = this.findById(id);//Õâ¸ö²»ÄÜ·ÅÔÚÏÂÃæ£¬ÒòÎªÕâ¸ö·½·¨ÀïÃæÓĞ¸ö¹Ø±ÕsessionµÄÖ¸Áî£¬»áÔì³Ésession¹Ø±ÕÔì³ÉÒÔºó²½ÖèÎŞsession¶ÔÏó
+//		User user = this.findById(id);//è¿™ä¸ªä¸èƒ½æ”¾åœ¨ä¸‹é¢ï¼Œå› ä¸ºè¿™ä¸ªæ–¹æ³•é‡Œé¢æœ‰ä¸ªå…³é—­sessionçš„æŒ‡ä»¤ï¼Œä¼šé€ æˆsessionå…³é—­é€ æˆä»¥åæ­¥éª¤æ— sessionå¯¹è±¡
 		User user = new User();
 		user.setId(id);
 		Session session = this.openSession();
