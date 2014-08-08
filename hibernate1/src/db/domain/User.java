@@ -2,7 +2,7 @@ package db.domain;
 
 import java.io.Serializable;
 
-public class User implements Serializable {//为什么实现要序列化？
+public class User implements Serializable {//涓轰粈涔堝疄鐜拌搴忓垪鍖栵紵
 	private int id;
 	private String email;
 	private String nickName;

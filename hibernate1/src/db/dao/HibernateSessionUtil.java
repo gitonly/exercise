@@ -11,8 +11,8 @@ public class HibernateSessionUtil {
 		Session session = sessionLocal.get();
 		if(session == null || !session.isOpen()){
 			Configuration conf = new Configuration();
-			conf.configure();//加载hibernate.cfg.xml配置文件
-			SessionFactory sf = conf.buildSessionFactory();//获取SessionFactory实例
+			conf.configure();//鍔犺浇hibernate.cfg.xml閰嶇疆鏂囦欢
+			SessionFactory sf = conf.buildSessionFactory();//鑾峰彇SessionFactory瀹炰緥
 			session = sf.openSession();
 			sessionLocal.set(session);
 		}

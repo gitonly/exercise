@@ -10,14 +10,14 @@ public class RegistAction {
 	
 	public String execute(){
 		UserDAO userDAO = new UserDAO();
-		//TODO ÉèÖÃÆäËûÊôĞÔÖµ
+		//TODO è®¾ç½®å…¶ä»–å±æ€§å€¼
 		String pwd = DegistUtil.md5(user.getPassword());
 		user.setPassword(pwd);
 		String code = VerifyUtil.getVerifyCode();
 		user.setVerifyCode(code);
 		user.setLastLoginTime(System.currentTimeMillis());
 		userDAO.add(user);
-		System.out.println("·¢ËÍÓÊ¼ş:"+code+"-"+user.getId());
+		System.out.println("å‘é€é‚®ä»¶:"+code+"-"+user.getId());
 		return "success";
 	}
 

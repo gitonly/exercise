@@ -7,10 +7,10 @@ import sun.misc.BASE64Encoder;
 public final class DegistUtil {
 	public static String md5(String str){
 		try {
-			//½«ÃÜÂë±à³Ì×Ö½ÚÔÙ¼ÓÃÜ
+			//å°†å¯†ç ç¼–ç¨‹å­—èŠ‚å†åŠ å¯†
 			MessageDigest md = MessageDigest.getInstance("MD5");
 			byte[] bys = md.digest(str.getBytes());
-			//½«¼ÓÃÜºóµÄ×Ö½ÚÊı×éÊ¹ÓÃBase64Ëã·¨±ä³É×Ö·û´®
+			//å°†åŠ å¯†åçš„å­—èŠ‚æ•°ç»„ä½¿ç”¨Base64ç®—æ³•å˜æˆå­—ç¬¦ä¸²
 			BASE64Encoder encode = new BASE64Encoder();
 			return encode.encode(bys);
 		} catch (Exception e) {

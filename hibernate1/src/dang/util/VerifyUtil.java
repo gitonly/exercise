@@ -9,12 +9,12 @@ public final class VerifyUtil {
 	}
 	
 	public static String getUserID(String emailCode){
-		//TODO 将uuid-userid内容的userid取出
+		//TODO 灏唘uid-userid鍐呭鐨剈serid鍙栧嚭
 		return "";
 	}
 	
 	public static String getUUID(String emailCode){
-		//TODO 将uuid-userid内容的uuid取出
+		//TODO 灏唘uid-userid鍐呭鐨剈uid鍙栧嚭
 		return "";
 	}
 	
