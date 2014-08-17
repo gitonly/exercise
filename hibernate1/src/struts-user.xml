@@ -6,7 +6,7 @@
 <struts>
 	<package name="user" namespace="/user" extends="dangDefault">
 		<action name="regist" class="struts.action.RegistAction">
-			<interceptor-ref name="transactionStack"/>
+			<interceptor-ref name="transactionStack"/><!-- 配置事务的拦截器 -->
 			<result name="success">/user/verify_form.jsp</result>
 		</action>
 	</package>

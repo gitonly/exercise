@@ -21,9 +21,9 @@ public class UserDAO extends BaseDAO{
 	}
 	
 	public void add2(User user){
+		//事务交给拦截器处理了
 		Session session = this.openSession();
 		session.save(user);
-		this.closeSession();
 	}
 	
 	public User findById(int id){//非主键查询用hql语句，以后讲

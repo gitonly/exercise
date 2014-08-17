@@ -8,7 +8,7 @@ import com.opensymphony.xwork2.ActionInvocation;
 import com.opensymphony.xwork2.interceptor.MethodFilterInterceptor;
 
 import db.dao.HibernateSessionUtil;
-
+//方法事务拦截器
 public class TransactionInterceptor extends MethodFilterInterceptor {
 
 	@Override

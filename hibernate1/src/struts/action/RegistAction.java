@@ -6,6 +6,7 @@ import db.dao.UserDAO;
 import db.domain.User;
 
 public class RegistAction {
+	//input
 	private User user;
 	
 	public String execute(){
